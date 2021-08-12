@@ -9,6 +9,7 @@ import Login from './components/Login';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
 import { useEffect } from 'react';
+import Payment from './components/Payment';
 
 
 function App() {
@@ -45,11 +46,15 @@ function App() {
           <Route path="/login">
             <Login/>
           </Route>
+          <Route path="/payment">
+            <Header/>
+           <Payment/>
+          </Route>
           <Route path="/"> {/*default route*/}
           <Header/>
           <Home/>
           </Route>
-          
+         
 
         </Switch>
       </Router>
