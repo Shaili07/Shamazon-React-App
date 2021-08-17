@@ -3,7 +3,7 @@ import React from 'react'
 import { DeleteOutlineTwoTone } from "@material-ui/icons";
 import { useStateValue } from "../StateProvider";
 
-export default function CheckoutProduct({id,image,title,price,rating}) {
+export default function CheckoutProduct({id,image,title,price,rating,hideButton}) {
     const [{cart},dispatch]=useStateValue();
     const deleteItem=()=>
    {
@@ -28,8 +28,10 @@ dispatch({
               <p>🌟</p>
             ))}
                 </div>
+                {!hideButton && (
                 <button className="checkoutproduct__button" onClick={deleteItem}>Delete</button> 
-           </div>
+                )}
+                </div>
         
         </div>
     )

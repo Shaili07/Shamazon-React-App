@@ -44,6 +44,12 @@ const reducer = (state, action) => {
                 user:action.user, // spread operator used to display all stored items plus a new addition
             };
 
+
+            case "EMPTY_BASKET":
+                return {
+                    ...state,cart:[] //empty out the cart
+                };
+
         default:
             return state;
 
